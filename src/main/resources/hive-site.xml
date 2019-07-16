@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+
+<property>
+  <name>javax.jdo.option.ConnectionURL</name>
+  <value>jdbc:mysql://db:3306/hive?createDatabaseIfNotExists=true&amp;useUnicode=true&amp;characterEncoding=utf8</value>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionDriverName</name>
+  <value>com.mysql.jdbc.Driver</value>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionUserName</name>
+  <value>root</value>
+</property>
+
+<property>
+  <name>javax.jdo.option.ConnectionPassword</name>
+  <value>123456</value>
+</property>
+
+<!-- 开启hive的本地模式  -->
+ 
+<property>
+    <name>hive.exec.mode.local.auto</name>
+    <value>true</value>
+</property>
+
+<!-- 开启你当前库的显示 -->
+
+<property>
+    <name>hive.cli.print.current.db</name>
+    <value>true</value>
+</property>
+
+<!-- 开启动态分区  -->
+
+<property>
+    <name>hive.exec.dynamic.partition</name>
+    <value>true</value>
+</property>
+<!-- 开启动态分区的模式  -->
+
+<property>
+    <name>hive.exec.dynamic.partition.mode</name>
+    <value>nonstrict</value>
+    <description>
+      In strict mode, the user must specify at least one static partition
+      in case the user accidentally overwrites all partitions.
+      In nonstrict mode all partitions are allowed to be dynamic.
+    </description>
+</property>
+
+</configuration>
+
