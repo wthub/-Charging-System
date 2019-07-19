@@ -16,7 +16,7 @@ object JedisOffset {
     val topicPartitionOffset: util.Map[String, String] = jedis.hgetAll(groupId)
     // 需要执行隐式转换操作
     import scala.collection.JavaConversions._
-    // 将map转换list进行循环处理         hz1803a-1 888
+    // 将map转换list进行循环处理
     val topicPartitionOffsetList: List[(String, String)] = topicPartitionOffset.toList
     // 循环处理数据
     for (topicPL<-topicPartitionOffsetList){

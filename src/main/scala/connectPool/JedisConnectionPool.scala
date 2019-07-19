@@ -10,7 +10,7 @@ object JedisConnectionPool {
 
   config.setMaxIdle(10)// 最大空闲
 
-  val pool = new JedisPool(config,"192.168.17.10",6379,10000,"123456")
+  val pool = new JedisPool(config,"192.168.17.10",6379,10000)
 
   // 获取Jedis对象
   def getConnection():Jedis={

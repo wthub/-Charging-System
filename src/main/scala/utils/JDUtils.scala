@@ -1,7 +1,8 @@
-package JDutils
+package utils
 
 import java.sql.{Connection, DriverManager}
 import java.util
+
 
 object JDUtils {
 
@@ -10,7 +11,7 @@ object JDUtils {
   private val pool = new util.LinkedList[Connection]()//连接池
   private var conNum = 0//当前连接数
 
-//获取连接
+  //获取连接
   def getConnections():Connection={
     //同步代码块
     AnyRef.synchronized({
@@ -18,7 +19,7 @@ object JDUtils {
         //加载驱动
         preGetconn()
         for(i <- 0 to connectionNum) {
-         val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/charging","root","123456")
+          val conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/charging","root","123456")
           pool.push(conn)
           conNum += 1
         }
@@ -42,4 +43,5 @@ object JDUtils {
       Class.forName("com.mysql.jdbc.Driver")
     }
   }
+
 }
